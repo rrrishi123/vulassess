@@ -22,7 +22,7 @@ def run():
     trimmed_data = {}
 
     for cve in cve_list:
-        if cve['impact'].has_key('baseMetricV3'):
+        if 'baseMetricV3' in cve['impact']:
             cve_id = cve['cve']['CVE_data_meta']['ID']
             trimmed_data[cve_id] = cve['impact']['baseMetricV3']
 
