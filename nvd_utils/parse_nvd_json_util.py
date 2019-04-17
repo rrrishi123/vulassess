@@ -17,12 +17,12 @@ def write_jsonfile(data, outputfile):
 def run():
     jsondata = read_nvd_json(INPUT_NVD_JSON_PATH)
 
-    cve_list = jsondata['CVE_Items']
+    cve_list = jsondata['CVE_Items']h
 
     trimmed_data = {}
 
     for cve in cve_list:
-        if cve['impact'].has_key('baseMetricV3'):
+        if 'baseMetricV3' in cve['impact']:
             cve_id = cve['cve']['CVE_data_meta']['ID']
             trimmed_data[cve_id] = cve['impact']['baseMetricV3']
 
